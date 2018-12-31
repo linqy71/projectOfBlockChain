@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>中山大学身份与奖项信息管理系统</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script src="./app.js"></script>
+</head>
+<body>
+
+<nav class="navbar-fixedtop">
+  <div>
+    <a class="logo" href=""> 
+      <img src="https://i.loli.net/2018/12/31/5c28fe39a3dae.jpg" alt="nav logo">
+    </a>
+    <h1>中山大学身份与奖项信息管理系统</h1>
+    <span id="curAccount"></span>
+    <a class="btn sign-in" id="sign_in" onclick="App.showLogin()">切换账户</a>
+  </div>
+</nav>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id="loginPage">
+
+  <br><label for="toAccount">切换账户: </label><input type="text" id="toAccount" placeholder="e.g., 0xacc9d3501be07809a7f58eb261068aaddbc0b1ef "></input>
+ 
+  <br><br><button id="login" onclick="App.login()">登录</button>
+  <span id="status"></span>
+  <br>
+
+  <br>
+  <span id="available"> 可用账号 </span>
+  <br>
+  <span id="accounts"></span>
+  <br>
+  </div>
+
+  <ul>
+    <ol id="registerBtn" class="menu">
+      <a href=""><span class="subtitle">注册身份</span></a>
+      <input id="subfolder1" type="checkbox" class="check" />
+      <div id="register" class="content">
+      <br><label for="myName">我的姓名: </label><input type="text" id="myName" placeholder="e.g., 张三"></input>
+      <br>
+      <br><label for="myId">我的id: </label><input type="text" id="myId" placeholder="e.g., 16340000"></input>
+      <br>
+      <br><label for="myStatus">我的身份: </label><input type="text" id="myStatus" placeholder="e.g., 本科生"></input>
+      <br>
+      <br><button id="registerStatus" onclick="App.registerStatus()">注册</button> <span id="registerResult"></span>
+      <br>
+      <br>
+      </div>
+    </ol>
+    <ol class="menu" id="queryBtn">
+      <a href=""><span class="subtitle">查询身份</span></a>
+      <input id="subfolder2" type="checkbox" class="check" checked="true" />
+      <div id="query1" class="content">
+        <br><label for="targetAccount">查询账户: </label><input type="text" id="targetAccount" placeholder="e.g., 0x1231231231231231"></input>
+        <br>
+
+        <br>身份结果: <span id="statusResult"></span>
+        <br>
+
+        <br><button id="queryStatus" onclick="App.getStatus()">查询</button>
+        <br>
+        <br>
+      </div>
+    </ol>
+    <ol class="menu" id="addAwardBtn">
+      <a href=""><span class="subtitle">添加奖项</span></a>
+      <input id="subfolder3" type="checkbox" class="check" checked="true"/>
+      <div id="add" class="content"> 
+        <br><label for="description">奖项描述: </label><input type="text" id="description" placeholder="e.g., 获得国家奖学金"></input>
+        <br>
+        <br>
+        <span >奖项可见性: </span>
+        <input name="visibility" type="radio" class="radio" checked="checked"  value="1" /> 可见 
+        <input name="visibility" type="radio" class="radio" value="0"> 不可见 
+
+        <br>
+        <br><button id="addAward" onclick="App.addAward()">添加</button> <span id="addAdwardResult"></span>
+        <br>
+        <br>
+      </div>
+    </ol>
+    <ol class="menu" id="queryAwardBtn">
+      <a href=""><span class="subtitle">查询奖项</span></a>
+      <input id="subfolder4" type="checkbox" class="check" checked="true"/>
+      <div id="query2" class="content">
+        <br><button id="showAllAwards" onclick="App.showAllAwards()">查看我的所有奖项</button>
+        <br>
+        <br>
+        <ul id="allMyAwards"></ul>
+        <br>
+        <br>
+        <br><label for="other">查询账户: </label><input type="text" id="other" placeholder="e.g., 0x1231231231231231"></input>
+        <br>
+        <br><button id="showOthersAward" onclick="App.showOthersAward()">查看他的所有奖项</button>
+        <br>
+        <br>
+        <ul id="allHisAwards"> </ul>
+        <br>
+      </div>
+    </ol>
+  </ul>
+
+  
+  
+  
+  <br>
+
+</body>
+</html>
